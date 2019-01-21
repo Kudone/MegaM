@@ -40,6 +40,26 @@ public class Player : MonoBehaviour
         myTrans.position = pos;
     }
 
+    public GameObject myexplosion;
+    int mylife = 10;
+
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.tag == "enemybullet")
+        {
+            print(mylife);
+            mylife -= 1;
+            Instantiate(myexplosion, new Vector3(transform.position.x, transform.position.y - 2.0f, transform.position.z), Quaternion.identity);
+
+            if (mylife == 0)
+            {
+                Destroy(this.gameObject);
+                Destroy(coll.gameObject);
+            }
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
