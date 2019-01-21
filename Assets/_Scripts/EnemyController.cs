@@ -29,7 +29,6 @@ public class EnemyController : MonoBehaviour
 
             Transform enemyTrans = GameObject.Find("EnemyCharacter").transform;
             Vector3 pos = enemyTrans.position;
-            print(pos.x + "EnemyCharacter" + pos.z);
 
             float result_x = pos.x + v[vr];
             float result_z = pos.z + h[hr];
@@ -37,13 +36,11 @@ public class EnemyController : MonoBehaviour
             if (result_x < 0 || result_x > vmax)
             {
                 result_x = pos.x;
-                print(result_x);
             }
 
             if (result_z < hmin || result_z > hmax)
             {
                 result_z = pos.z;
-                print(result_z);
             }
 
             pos.x = result_x;
@@ -53,6 +50,7 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+    
 
     // Update is called once per frame
     void Update()

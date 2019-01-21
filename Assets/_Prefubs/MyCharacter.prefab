@@ -2261,6 +2261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5949190154446877553}
+  - component: {fileID: 1872916330}
   m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
@@ -2282,6 +2283,19 @@ Transform:
   m_Father: {fileID: 855588002164004574}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1872916330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365281948487291550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86eb6a93309efc94e9c80400a40bc1e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5045582048973533177, guid: e71989a941becf149b10b764b2f86f54, type: 3}
 --- !u!1 &2224859406154787745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2328,6 +2342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6381b1dd8d830e4cbd4fe0f6a0b1426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myexplosion: {fileID: 2315279802301323947, guid: cb2c6d8bf387cfe488fd69ce9043fe37,
+    type: 3}
 --- !u!136 &2224859406154787746
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2336,9 +2352,9 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2224859406154787745}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.31621242
   m_Height: 1.8281035
   m_Direction: 1
-  m_Center: {x: 0, y: -0.15335298, z: 0}
+  m_Center: {x: 0, y: -0.15335298, z: -0.18378758}

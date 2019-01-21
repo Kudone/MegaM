@@ -12,14 +12,15 @@ public class EnemyLife : MonoBehaviour
 
     public GameObject explosion;
     int life = 100;
+
     void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == "bullet")
         {
             print(life);
             life -= 1;
-            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-
+            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y - 2.0f, transform.position.z), Quaternion.identity);
+            
             if (life == 0)
             {
                 Destroy(this.gameObject);
