@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     public void Action()
     {
@@ -12,10 +12,6 @@ public class Player : MonoBehaviour
         Transform myTrans = GameObject.Find("MyCharacter").transform;
         Vector3 pos = myTrans.position;
 
-        if (Input.GetKeyDown("space"))
-        {
-            print("space key was pressed");
-        }
 
         if (Input.GetKeyDown("w") && pos.x != 0)
         {
@@ -25,7 +21,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown("s") && pos.x < vmax)
         {
             pos.x += 2.0f;
-            print("skey was pressed");
         }
 
         if (Input.GetKeyDown("a") && pos.z != 0)
@@ -40,15 +35,17 @@ public class Player : MonoBehaviour
         myTrans.position = pos;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            Action();
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Action();
-    }
-}
