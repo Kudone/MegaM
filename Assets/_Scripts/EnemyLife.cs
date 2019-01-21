@@ -11,7 +11,7 @@ public class EnemyLife : MonoBehaviour
     }
 
     public GameObject explosion;
-    int life = 10;
+    int life = 100;
     void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == "bullet")
