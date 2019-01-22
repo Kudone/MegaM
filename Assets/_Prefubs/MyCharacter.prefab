@@ -2302,6 +2302,7 @@ MonoBehaviour:
   myexplosion: {fileID: 2315279802301323947, guid: cb2c6d8bf387cfe488fd69ce9043fe37,
     type: 3}
   hpGauge: {fileID: 0}
+  kaihiGauge: {fileID: 0}
 --- !u!136 &2224859406154787746
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -15,6 +15,10 @@ public class PlayerShot : MonoBehaviour
             // 弾をプレイヤーと同じ位置/角度で作成
             Instantiate(bullet, transform.position, transform.rotation);
             // 0.05秒待つ
+            if (GetComponent<CapsuleCollider>().enabled == false)
+            {
+                GetComponent<CapsuleCollider>().enabled = !GetComponent<CapsuleCollider>().enabled;
+            }
         }
     }
 

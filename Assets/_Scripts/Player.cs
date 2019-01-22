@@ -17,21 +17,37 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown("w") && pos.x != 0)
         {
             pos.x -= 2.0f;
+            if(GetComponent<CapsuleCollider>().enabled == false)
+            {
+                GetComponent<CapsuleCollider>().enabled = !GetComponent<CapsuleCollider>().enabled;
+            }
         }
 
         if (Input.GetKeyDown("s") && pos.x < vmax)
         {
             pos.x += 2.0f;
+            if (GetComponent<CapsuleCollider>().enabled == false)
+            {
+                GetComponent<CapsuleCollider>().enabled = !GetComponent<CapsuleCollider>().enabled;
+            }
         }
 
         if (Input.GetKeyDown("a") && pos.z != 0)
         {
             pos.z -= 2.0f;
+            if (GetComponent<CapsuleCollider>().enabled == false)
+            {
+                GetComponent<CapsuleCollider>().enabled = !GetComponent<CapsuleCollider>().enabled;
+            }
         }
 
         if (Input.GetKeyDown("d") && pos.z < hmax)
         {
             pos.z += 2.0f;
+            if (GetComponent<CapsuleCollider>().enabled == false)
+            {
+                GetComponent<CapsuleCollider>().enabled = !GetComponent<CapsuleCollider>().enabled;
+            }
         }
         myTrans.position = pos;
     }
@@ -42,7 +58,7 @@ public class Player : MonoBehaviour
     public Image kaihiGauge;
     int kaihi = 0;
     int fullHp;
-    int fullKaihi;
+    int fullKaihi = 250;
 
 
     void OnTriggerEnter(Collider coll)
@@ -68,29 +84,22 @@ public class Player : MonoBehaviour
     void Start()
     {
         fullHp = mylife;
-        fullKaihi = 100;
-        StartCoroutine("KaihiGauge");
     }
 
-    IEnumerator KaihiGauge()
-    {
-        while (true)
-        {
-            if (kaihi > 100)
-            {
-                yield return new WaitForSeconds(1f);
-                kaihi += 1;
-            }
-
-        }
-    }
+    
 
     void Kaihi()
     {
-        if (Input.GetMouseButtonDown(1) && kaihi == 100)
+        kaihi += 1;
+        kaihiGauge.fillAmount = (float)kaihi / fullKaihi;
+
+        if (Input.GetMouseButtonDown(1) && kaihi >= 250)
         {
             kaihi = 0;
+            GetComponent<Animator>().SetTrigger("isGuard");
+            GetComponent<CapsuleCollider>().enabled = !GetComponent<CapsuleCollider>().enabled;
         }
+
     }
 
     // Update is called once per frame
