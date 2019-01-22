@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -42,6 +43,8 @@ public class Player : MonoBehaviour
 
     public GameObject myexplosion;
     int mylife = 10;
+    public Image hpGauge;
+    int fullHp;
 
     void OnTriggerEnter(Collider coll)
     {
@@ -49,6 +52,7 @@ public class Player : MonoBehaviour
         {
             print(mylife);
             mylife -= 1;
+            hpGauge.fillAmount = (float)mylife / fullHp;
             Instantiate(myexplosion, new Vector3(transform.position.x, transform.position.y - 2.0f, transform.position.z), Quaternion.identity);
 
             if (mylife == 0)
@@ -63,7 +67,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        fullHp = mylife;
     }
 
     // Update is called once per frame
