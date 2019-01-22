@@ -8,6 +8,9 @@ public class Bullet : MonoBehaviour
     
     void Start()
     {
+        Vector3 pos = transform.position;
+        pos.y = 1;
+        transform.position = pos;
         GetComponent<Rigidbody>().velocity = transform.forward.normalized * speed;
         Destroy(this.gameObject, 0.57f);
     }

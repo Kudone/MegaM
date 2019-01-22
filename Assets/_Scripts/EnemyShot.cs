@@ -19,6 +19,8 @@ public class EnemyShot : MonoBehaviour
 
     IEnumerator JakuShot()
     {
+        Vector3 pos = transform.position;
+        
         while (true)
         {
             
