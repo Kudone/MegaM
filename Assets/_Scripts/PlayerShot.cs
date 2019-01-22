@@ -9,7 +9,7 @@ public class PlayerShot : MonoBehaviour
     void Shot()
     {
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetMouseButtonDown(0))
         {
 
             // 弾をプレイヤーと同じ位置/角度で作成
