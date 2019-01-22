@@ -13,10 +13,6 @@ public class Player : MonoBehaviour
         Transform myTrans = GameObject.Find("MyCharacter").transform;
         Vector3 pos = myTrans.position;
 
-        if (Input.GetKeyDown("space"))
-        {
-            print("space key was pressed");
-        }
 
         if (Input.GetKeyDown("w") && pos.x != 0)
         {
@@ -26,7 +22,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown("s") && pos.x < vmax)
         {
             pos.x += 2.0f;
-            print("skey was pressed");
         }
 
         if (Input.GetKeyDown("a") && pos.z != 0)
@@ -44,7 +39,11 @@ public class Player : MonoBehaviour
     public GameObject myexplosion;
     int mylife = 10;
     public Image hpGauge;
+    public Image kaihiGauge;
+    int kaihi = 0;
     int fullHp;
+    int fullKaihi;
+
 
     void OnTriggerEnter(Collider coll)
     {
@@ -63,16 +62,42 @@ public class Player : MonoBehaviour
         }
     }
 
+    
 
     // Start is called before the first frame update
     void Start()
     {
         fullHp = mylife;
+        fullKaihi = 100;
+        StartCoroutine("KaihiGauge");
+    }
+
+    IEnumerator KaihiGauge()
+    {
+        while (true)
+        {
+            if (kaihi > 100)
+            {
+                yield return new WaitForSeconds(1f);
+                kaihi += 1;
+            }
+
+        }
+    }
+
+    void Kaihi()
+    {
+        if (Input.GetMouseButtonDown(1) && kaihi == 100)
+        {
+            kaihi = 0;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         Action();
+        Kaihi();
+        
     }
 }
