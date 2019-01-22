@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 1496837740, guid: 3beb5e4c89111d04cb8079de7eeeed6c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1496837742, guid: 3beb5e4c89111d04cb8079de7eeeed6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -266,6 +270,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e3b59c10894d56941b4a263017f2b870, type: 2}
+    - target: {fileID: 1496837741, guid: 3beb5e4c89111d04cb8079de7eeeed6c, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1496837747, guid: 3beb5e4c89111d04cb8079de7eeeed6c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3beb5e4c89111d04cb8079de7eeeed6c, type: 3}

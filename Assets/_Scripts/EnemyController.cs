@@ -30,6 +30,10 @@ public class EnemyController : MonoBehaviour
             Transform enemyTrans = GameObject.Find("EnemyCharacter").transform;
             Vector3 pos = enemyTrans.position;
 
+            /*float chukeiz = pos.z;
+            int chukeizz = (int)Mathf.Floor(chukeiz);
+            pos.z = chukeizz;*/
+
             float result_x = pos.x + v[vr];
             float result_z = pos.z + h[hr];
 
