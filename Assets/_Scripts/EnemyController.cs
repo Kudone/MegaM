@@ -45,6 +45,7 @@ public class EnemyController : MonoBehaviour
 
             pos.x = result_x;
             pos.z = result_z;
+            
             enemyTrans.position = pos;
 
         }
