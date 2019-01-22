@@ -11,7 +11,7 @@ public class PlayerShot : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-
+            GetComponent<Animator>().SetTrigger("isFire");
             // 弾をプレイヤーと同じ位置/角度で作成
             Instantiate(bullet, transform.position, transform.rotation);
             // 0.05秒待つ
