@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
     public Image kaihiGauge;
     int kaihi = 0;
     int fullHp;
-    int fullKaihi = 250;
+    int fullKaihi = 100;
 
 
     void OnTriggerEnter(Collider coll)
@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
         kaihi += 1;
         kaihiGauge.fillAmount = (float)kaihi / fullKaihi;
 
-        if (Input.GetMouseButtonDown(1) && kaihi >= 250)
+        if (Input.GetMouseButtonDown(1) && kaihi >= 100)
         {
             kaihi = 0;
             GetComponent<Animator>().SetTrigger("isGuard");
