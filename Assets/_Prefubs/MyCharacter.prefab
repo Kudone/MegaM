@@ -2264,6 +2264,7 @@ GameObject:
   - component: {fileID: 2567067296312049196}
   - component: {fileID: 2224859406154787746}
   - component: {fileID: 6492914909305244774}
+  - component: {fileID: 7322565403088176460}
   m_Layer: 0
   m_Name: MyCharacter
   m_TagString: Player
@@ -2328,3 +2329,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5045582048973533177, guid: e71989a941becf149b10b764b2f86f54, type: 3}
+--- !u!95 &7322565403088176460
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2224859406154787745}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: fe2eb0b4e90413643a3ddc78c368140f, type: 3}
+  m_Controller: {fileID: 9100000, guid: fc7a9f139ddd1d442ad737bd1ce4f25e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
