@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerShot : MonoBehaviour
 {
+    public AudioClip shootSound;
+    private AudioSource source;
     public GameObject bullet;
 
     void Shot()
@@ -11,6 +13,7 @@ public class PlayerShot : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            source.PlayOneShot(shootSound, 1);
             GetComponent<Animator>().SetTrigger("isFire");
             // 弾をプレイヤーと同じ位置/角度で作成
             Instantiate(bullet, transform.position, transform.rotation);
@@ -25,7 +28,8 @@ public class PlayerShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame

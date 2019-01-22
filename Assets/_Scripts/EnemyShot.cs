@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyShot : MonoBehaviour
 {
+    public AudioClip jakuSound;
+    private AudioSource jakusource;
+    public AudioClip kyouSound;
+    private AudioSource kyousource;
 
     public GameObject jakubllet;
     private Animator animator;
@@ -12,6 +16,8 @@ public class EnemyShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        jakusource = GetComponent<AudioSource>();
+        kyousource = GetComponent<AudioSource>();
         //this.animator = GetComponent<Animator>();
         StartCoroutine("JakuShot");
         StartCoroutine("FinalShot");
@@ -27,6 +33,7 @@ public class EnemyShot : MonoBehaviour
             
             yield return new WaitForSeconds(1.2f);
             GetComponent<Animator>().SetTrigger("isJaku");
+            jakusource.PlayOneShot(jakuSound, 1);
             Instantiate(jakubllet, transform.position, transform.rotation);
             
         }
@@ -43,6 +50,7 @@ public class EnemyShot : MonoBehaviour
 
             yield return new WaitForSeconds(10f);
             GetComponent<Animator>().SetTrigger("isFinal");
+            kyousource.PlayOneShot(kyouSound, 1);
             StartCoroutine("Spia");
 
         }

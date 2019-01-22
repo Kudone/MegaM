@@ -2329,6 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86eb6a93309efc94e9c80400a40bc1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootSound: {fileID: 8300000, guid: 90b4f0e230a7dc2419d08969277a5d16, type: 3}
   bullet: {fileID: 5045582048973533177, guid: e71989a941becf149b10b764b2f86f54, type: 3}
 --- !u!95 &7322565403088176460
 Animator:

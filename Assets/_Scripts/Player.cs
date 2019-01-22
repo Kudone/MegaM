@@ -97,7 +97,10 @@ public class Player : MonoBehaviour
         {
             kaihi = 0;
             GetComponent<Animator>().SetTrigger("isGuard");
-            GetComponent<CapsuleCollider>().enabled = !GetComponent<CapsuleCollider>().enabled;
+            if (GetComponent<CapsuleCollider>().enabled == true)
+            {
+                GetComponent<CapsuleCollider>().enabled = !GetComponent<CapsuleCollider>().enabled;
+            }
         }
 
     }
