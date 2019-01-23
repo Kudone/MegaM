@@ -104,6 +104,11 @@ public class Player : MonoBehaviour
         kaihi += 1;
         kaihiGauge.fillAmount = (float)kaihi / fullKaihi;
 
+        if(GetComponent<CapsuleCollider>().enabled == false && kaihi > 50)
+        {
+            GetComponent<CapsuleCollider>().enabled = !GetComponent<CapsuleCollider>().enabled;
+        }
+
         if (Input.GetMouseButtonDown(1) && kaihi >= 100)
         {
             kaihi = 0;
