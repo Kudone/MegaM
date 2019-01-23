@@ -21,7 +21,7 @@ public class TsuShot : MonoBehaviour
         tjakusource = GetComponent<AudioSource>();
         tkyousource = GetComponent<AudioSource>();
         tfinalsource = GetComponent<AudioSource>();
-        //this.animator = GetComponent<Animator>();
+        this.tanimator = GetComponent<Animator>();
         StartCoroutine("TJakuShot");
         StartCoroutine("Tsubom");
         StartCoroutine("TsubomFinal");
@@ -36,8 +36,8 @@ public class TsuShot : MonoBehaviour
         {
             int r = UnityEngine.Random.Range(0, 3);
             yield return new WaitForSeconds(1.2f);
-            //GetComponent<Animator>().SetTrigger("isTJaku");
-            //tjakusource.PlayOneShot(tjakuSound, 1);
+            GetComponent<Animator>().SetTrigger("isTJaku");
+            tjakusource.PlayOneShot(tjakuSound, 1);
             Instantiate(tjakubllet[r], transform.position, Quaternion.Euler(0, 180, 0));
 
         }
@@ -53,8 +53,8 @@ public class TsuShot : MonoBehaviour
         {
 
             yield return new WaitForSeconds(5f);
-            //GetComponent<Animator>().SetTrigger("isTsubom");
-            //tkyousource.PlayOneShot(tkyouSound, 1);
+            GetComponent<Animator>().SetTrigger("isTsubom");
+            tkyousource.PlayOneShot(tkyouSound, 1);
             Instantiate(tsubom, transform.position, transform.rotation);
         }
     }
@@ -67,9 +67,9 @@ public class TsuShot : MonoBehaviour
         while (true)
         {
             print("tfinal");
-            yield return new WaitForSeconds(3f);
-            //GetComponent<Animator>().SetTrigger("isTFinal");
-            //tfinalsource.PlayOneShot(tfinalSound, 1);
+            yield return new WaitForSeconds(10f);
+            GetComponent<Animator>().SetTrigger("isTFinal");
+            tfinalsource.PlayOneShot(tfinalSound, 1);
             Instantiate(tsubomfinal, transform.position, transform.rotation);
         }
     }

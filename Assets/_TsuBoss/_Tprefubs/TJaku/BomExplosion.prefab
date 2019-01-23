@@ -4674,7 +4674,6 @@ GameObject:
   - component: {fileID: 5399816381384979791}
   - component: {fileID: 5791807476413501892}
   - component: {fileID: 7867206209813974458}
-  - component: {fileID: 5768774784281605052}
   m_Layer: 0
   m_Name: BomExplosion
   m_TagString: Untagged
@@ -9366,18 +9365,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &5768774784281605052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641802864479767124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 370d7398b597c694c88f1d3880c1b5d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4832921262463147999
 GameObject:
   m_ObjectHideFlags: 0
@@ -9389,11 +9376,9 @@ GameObject:
   - component: {fileID: 5102875338228335400}
   - component: {fileID: 3462357007377891363}
   - component: {fileID: 6356572882746603446}
-  - component: {fileID: 5788648125688136212}
-  - component: {fileID: 5729680893963962291}
   m_Layer: 0
   m_Name: 01
-  m_TagString: enemybullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14136,35 +14121,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!135 &5788648125688136212
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4832921262463147999}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4.9700007
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5729680893963962291
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4832921262463147999}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7667402534266357250
 GameObject:
   m_ObjectHideFlags: 0
