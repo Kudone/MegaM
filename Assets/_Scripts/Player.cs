@@ -63,9 +63,20 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
+
+        if (coll.gameObject.tag == "medical")
+        {
+            print("medical");
+            mylife += 3;
+            if(mylife >= 10) { mylife = 10; }
+            print(mylife);
+            hpGauge.fillAmount = (float)mylife / fullHp;
+        }
+
+
         if (coll.gameObject.tag == "enemybullet")
         {
-            print(mylife);
+            
             mylife -= 1;
             hpGauge.fillAmount = (float)mylife / fullHp;
             Instantiate(myexplosion, new Vector3(transform.position.x, transform.position.y - 2.0f, transform.position.z), Quaternion.identity);
