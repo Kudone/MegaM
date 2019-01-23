@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/__Scenes/TsuBoss.unity
     guid: 1e218f1fc3612ad41a4ed944687e71bf
+  - enabled: 1
+    path: Assets/__Scenes/GameOver.unity
+    guid: a216f2e03ab27264b80ab1255a0cdb45
+  - enabled: 1
+    path: Assets/__Scenes/Clear.unity
+    guid: 8a7fda794eed16a468d3433f1d3efa3e
   m_configObjects: {}

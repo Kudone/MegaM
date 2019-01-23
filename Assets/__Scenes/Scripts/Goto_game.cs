@@ -32,4 +32,13 @@ public class Goto_game : MonoBehaviour
         Invoke("GotoSelect", 1);
     }
 
+    public void GotoTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+    public void TitleButtonClicked()
+    {
+        Invoke("GotoTitle", 1);
+    }
+
 }
