@@ -1516,6 +1516,7 @@ GameObject:
   - component: {fileID: 1496837744}
   - component: {fileID: 1496837745}
   - component: {fileID: 2135973160}
+  - component: {fileID: 2135973154}
   m_Layer: 0
   m_Name: EnemyCharacter
   m_TagString: enemy
@@ -1716,6 +1717,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &2135973154
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496837740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9346175
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8678591, z: 0}
 --- !u!1 &1522109150
 GameObject:
   m_ObjectHideFlags: 0
