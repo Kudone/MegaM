@@ -16,7 +16,7 @@ public class StageController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(20f);
+            yield return new WaitForSeconds(30f);
             float rx = UnityEngine.Random.Range(0, 3) * 2;
             float rz = UnityEngine.Random.Range(0, 3) * 2;
             Instantiate(medical, new Vector3(rx, 0.5f, rz), transform.rotation);
