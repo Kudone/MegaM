@@ -7,7 +7,7 @@ public class TsuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("Action");
+        //StartCoroutine("Action");
     }
 
     int vmax = 4;

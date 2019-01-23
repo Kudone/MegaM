@@ -753,7 +753,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2759053660751149395}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1180,9 +1180,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2759053661204652603}
+  - component: {fileID: 2138569252}
   m_Layer: 0
   m_Name: MyStages
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1210,6 +1211,19 @@ Transform:
   m_Father: {fileID: 2759053660751149397}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2138569252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759053661204652600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.045816, y: 0.63625526, z: 4.8105917}
+  m_Center: {x: 2.022908, y: -0.18187237, z: 1.9052958}
 --- !u!1 &2759053661324326905
 GameObject:
   m_ObjectHideFlags: 0
