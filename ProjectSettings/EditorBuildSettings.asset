@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/__Scenes/Title.unity
     guid: 523ec6229e48eff40b5cff6ab0ce5607
   - enabled: 1
+    path: Assets/__Scenes/Select.unity
+    guid: b86bffaba6fba6246ad92711d2afe0d9
+  - enabled: 1
     path: Assets/__Scenes/Main.unity
     guid: 2f2f9e1bcccd9d64ba83b89caf4bfb66
+  - enabled: 1
+    path: Assets/__Scenes/TsuBoss.unity
+    guid: 1e218f1fc3612ad41a4ed944687e71bf
   m_configObjects: {}

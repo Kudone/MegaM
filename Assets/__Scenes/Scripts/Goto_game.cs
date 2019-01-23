@@ -13,4 +13,23 @@ public class Goto_game : MonoBehaviour
     {
         Invoke("Gotomain", 1);
     }
+
+    public void GotoTsu()
+    {
+        SceneManager.LoadScene("Tsuboss");
+    }
+    public void TsuButtonClicked()
+    {
+        Invoke("GotoTsu", 1);
+    }
+
+    public void GotoSelect()
+    {
+        SceneManager.LoadScene("Select");
+    }
+    public void SelectButtonClicked()
+    {
+        Invoke("GotoSelect", 1);
+    }
+
 }

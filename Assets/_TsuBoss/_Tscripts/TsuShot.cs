@@ -67,9 +67,9 @@ public class TsuShot : MonoBehaviour
         while (true)
         {
             print("tfinal");
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(11f);
             GetComponent<Animator>().SetTrigger("isTFinal");
-            tfinalsource.PlayOneShot(tfinalSound, 1);
+            tfinalsource.PlayOneShot(tfinalSound, 5);
             Instantiate(tsubomfinal, transform.position, transform.rotation);
         }
     }

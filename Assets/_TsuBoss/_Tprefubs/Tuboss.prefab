@@ -323,9 +323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc076fe0ed6a0740af04defbc4c9552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tjakuSound: {fileID: 8300000, guid: af1bb90dde901894c85b7a3eb9a835aa, type: 3}
-  tkyouSound: {fileID: 8300000, guid: 76face8ee7ad4f044baa9da205f1eb5b, type: 3}
-  tfinalSound: {fileID: 8300000, guid: 3323cb63382464d47adb0b438a5dc873, type: 3}
+  tjakuSound: {fileID: 8300000, guid: 76face8ee7ad4f044baa9da205f1eb5b, type: 3}
+  tkyouSound: {fileID: 8300000, guid: 7065db522c42db949baf4143bc9022be, type: 3}
+  tfinalSound: {fileID: 8300000, guid: 0137ca8ca0d0a524f8c426172711fa90, type: 3}
   tjakubllet:
   - {fileID: 8532246841478942045, guid: 1675a5289ce1f724f82ac0b97a7f9ee8, type: 3}
   - {fileID: 2226994255435426266, guid: a970b435ebf1ef54f8851d5798e9585f, type: 3}
