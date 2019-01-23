@@ -1590,6 +1590,7 @@ MonoBehaviour:
   explosion: {fileID: 1507830699286493858, guid: 5547753c4541e5a4fa7be7e7d2e5a830,
     type: 3}
   ehpGauge: {fileID: 0}
+  clear: {fileID: 7316969975940702574, guid: 5956d64eff2dcb8438d55cf3b39af3a1, type: 3}
 --- !u!114 &1496837744
 MonoBehaviour:
   m_ObjectHideFlags: 0

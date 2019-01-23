@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 100672, guid: 7dc0b63f67faaf9479803bcfdff7f71e, type: 3}
   ehpGauge: {fileID: 0}
+  clear: {fileID: 7316969975940702574, guid: 5956d64eff2dcb8438d55cf3b39af3a1, type: 3}
 --- !u!1 &1635593469
 GameObject:
   m_ObjectHideFlags: 0

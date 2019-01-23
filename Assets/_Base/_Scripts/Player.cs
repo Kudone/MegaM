@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown("w") && pos.x != 0)
         {
             pos.x -= 2.0f;
-            if(GetComponent<CapsuleCollider>().enabled == false)
+            if (GetComponent<CapsuleCollider>().enabled == false)
             {
                 GetComponent<CapsuleCollider>().enabled = !GetComponent<CapsuleCollider>().enabled;
             }
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
     int kaihi = 0;
     int fullHp;
     int fullKaihi = 100;
+    public GameObject over;
 
 
     void OnTriggerEnter(Collider coll)
@@ -68,7 +70,7 @@ public class Player : MonoBehaviour
         {
             print("medical");
             mylife += 3;
-            if(mylife >= 10) { mylife = 10; }
+            if (mylife >= 10) { mylife = 10; }
             print(mylife);
             hpGauge.fillAmount = (float)mylife / fullHp;
         }
@@ -76,13 +78,14 @@ public class Player : MonoBehaviour
 
         if (coll.gameObject.tag == "enemybullet")
         {
-            
+
             mylife -= 1;
             hpGauge.fillAmount = (float)mylife / fullHp;
             Instantiate(myexplosion, new Vector3(transform.position.x, transform.position.y - 2.0f, transform.position.z), Quaternion.identity);
 
             if (mylife == 0)
             {
+                Instantiate(over, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
                 Destroy(coll.gameObject);
             }

@@ -41,4 +41,7 @@ public class Goto_game : MonoBehaviour
         Invoke("GotoTitle", 1);
     }
 
+
+   
+
 }

@@ -2305,6 +2305,7 @@ MonoBehaviour:
     type: 3}
   hpGauge: {fileID: 0}
   kaihiGauge: {fileID: 0}
+  over: {fileID: 3718088682150281399, guid: 62d3d5186a359b44e9bee8487c31a604, type: 3}
 --- !u!136 &2224859406154787746
 CapsuleCollider:
   m_ObjectHideFlags: 0

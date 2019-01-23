@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyLife : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyLife : MonoBehaviour
     int life = 100;
     public Image ehpGauge;
     int efullHp;
+    public GameObject clear;
 
     void OnTriggerEnter(Collider coll)
     {
@@ -23,13 +25,16 @@ public class EnemyLife : MonoBehaviour
             
             if (life == 0)
             {
+                Instantiate(clear, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
                 Destroy(coll.gameObject);
             }
         }
     }
+
+    
     // Start is called before the first frame update
-        void Start()
+    void Start()
         {
             efullHp = life;
     }
