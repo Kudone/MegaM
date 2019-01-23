@@ -41,7 +41,16 @@ public class Goto_game : MonoBehaviour
         Invoke("GotoTitle", 1);
     }
 
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
 
-   
+
+      Application.Quit();
+
+        }
+    }
+
 
 }

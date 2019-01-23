@@ -43,6 +43,7 @@ public class StartCount : MonoBehaviour
         { 
             Time.timeScale = 1;
             _textCountdown.gameObject.SetActive(false);
+            Destroy(this.gameObject,1.0f);
         }
     }
 }
