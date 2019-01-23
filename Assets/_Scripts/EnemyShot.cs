@@ -8,6 +8,8 @@ public class EnemyShot : MonoBehaviour
     private AudioSource jakusource;
     public AudioClip kyouSound;
     private AudioSource kyousource;
+    public AudioClip handSound;
+    private AudioSource handsource;
 
     public GameObject jakubllet;
     private Animator animator;
@@ -18,9 +20,11 @@ public class EnemyShot : MonoBehaviour
     {
         jakusource = GetComponent<AudioSource>();
         kyousource = GetComponent<AudioSource>();
+        handsource = GetComponent<AudioSource>();
         //this.animator = GetComponent<Animator>();
         StartCoroutine("JakuShot");
         StartCoroutine("FinalShot");
+        StartCoroutine("GodHand");
     }
 
 
@@ -48,7 +52,7 @@ public class EnemyShot : MonoBehaviour
         while (true)
         {
 
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(15f);
             GetComponent<Animator>().SetTrigger("isFinal");
             kyousource.PlayOneShot(kyouSound, 1);
             StartCoroutine("Spia");
@@ -66,7 +70,22 @@ public class EnemyShot : MonoBehaviour
             Instantiate(spia, new Vector3(rx, 1.0f, rz), Quaternion.Euler(90, 0, 0));
         }
     }
-    
+
+    public GameObject hand;
+
+    IEnumerator GodHand()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3f);
+            GetComponent<Animator>().SetTrigger("isHand");
+            handsource.PlayOneShot(handSound, 1);
+            float rz = UnityEngine.Random.Range(0, 3) * 2;
+            Instantiate(hand, new Vector3(-1.0f, 1.0f, rz), Quaternion.Euler(50, 0, 180));
+        }
+    }
+
+
 
     // Update is called once per frame
     void Update()

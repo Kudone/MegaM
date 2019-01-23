@@ -414,6 +414,15 @@ PrefabInstance:
       propertyPath: jakuSound
       value: 
       objectReference: {fileID: 8300000, guid: af1bb90dde901894c85b7a3eb9a835aa, type: 3}
+    - target: {fileID: 1496837744, guid: 3beb5e4c89111d04cb8079de7eeeed6c, type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 6385916497262881610, guid: 4e1b6fe5fa29c5542ab170438db7da13,
+        type: 3}
+    - target: {fileID: 1496837744, guid: 3beb5e4c89111d04cb8079de7eeeed6c, type: 3}
+      propertyPath: handSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 90b4f0e230a7dc2419d08969277a5d16, type: 3}
     m_RemovedComponents:
     - {fileID: 1496837747, guid: 3beb5e4c89111d04cb8079de7eeeed6c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3beb5e4c89111d04cb8079de7eeeed6c, type: 3}
