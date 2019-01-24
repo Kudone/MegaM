@@ -1,0 +1,92 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion 26
+  buildToolsVersion '28.0.2'
+  com.android.ddmlib.DdmPreferences.setLogLevel("verbose")
+  com.android.ddmlib.DdmPreferences.setTimeOut(10 * 60000)
+
+  defaultPublishConfig "release"
+
+  defaultConfig {
+    minSdkVersion 9
+    targetSdkVersion 26
+    versionCode = 3000
+    versionName = "3.0.0"
+
+    setProperty("archivesBaseName", "unity-ads")
+
+    buildConfigField 'String', 'WEBVIEW_BRANCH', getPropertyStringWithDefaultValue('WEBVIEW_BRANCH', '"' + versionName + '"')
+
+    testBuildType "coverage"
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunnerArguments disableAnalytics: 'true' // Won't work yet, see: https://code.google.com/p/android/issues/detail?id=188241
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt')
+      consumerProguardFiles 'proguard-rules.pro'
+    }
+    debug {
+      minifyEnabled false
+      testCoverageEnabled false
+      consumerProguardFiles 'proguard-rules.pro'
+    }
+    coverage {
+      testCoverageEnabled true
+      consumerProguardFiles 'proguard-rules.pro'
+      signingConfig signingConfigs.debug
+      buildConfigField 'String', 'WEBVIEW_BRANCH', getPropertyStringWithDefaultValue('WEBVIEW_BRANCH', '"development"')
+    }
+  }
+}
+
+dependencies {
+  testImplementation 'junit:junit:4.12'
+  androidTestImplementation 'org.mockito:mockito-core:2.19.1'
+  androidTestImplementation 'org.mockito:mockito-android:2.19.1'
+  androidTestImplementation 'com.android.support.test:runner:1.0.2'
+  androidTestImplementation 'com.android.support.test:rules:1.0.2'
+  compileOnly 'com.google.ar:core:1.0.0'
+}
+
+android.testVariants.all { variant ->
+  variant.outputs.all { output ->
+    outputFileName = "../../androidTest.apk"
+  }
+}
+
+android.libraryVariants.all { variant ->
+    task("generate${variant.name.capitalize()}Javadoc", type: Javadoc) {
+        description "Generates Javadoc for $variant.name."
+        source = variant.javaCompiler.source
+        ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+        doFirst {
+          classpath = files(variant.javaCompiler.classpath.files) + files(ext.androidJar)
+        }
+		options {
+		       links "http://docs.oracle.com/javase/7/docs/api/"
+		       linksOffline "http://developer.android.com/reference","${android.sdkDirectory}/docs/reference"
+        }
+        exclude '**/R.java'
+		destinationDir = file("../javadoc/")
+    }
+}
+
+def getPropertyStringWithDefaultValue(String key, String defaultValue) {
+  def value = project.getProperties().get(key)
+  // Ensure that string is quoted
+  if ((value != null) && (!(value ==~ /^".*"$/)) ){
+    println "Value for key '$key' is not quoted, adding quotes to '$value'"
+    value = "\"$value\""
+  }
+  return value != null ? value : defaultValue
+}
