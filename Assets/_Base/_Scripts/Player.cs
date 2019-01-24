@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
         int vmax = 4;
         int hmax = 4;
 
-        Transform myTrans = GameObject.Find("MyCharacter").transform;
+        
         Vector3 pos = myTrans.position;
 
 
@@ -92,12 +92,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    
 
+    public Transform myTrans;
     // Start is called before the first frame update
     void Start()
     {
         fullHp = mylife;
+        myTrans = GameObject.Find("MyCharacter").transform;
     }
 
     

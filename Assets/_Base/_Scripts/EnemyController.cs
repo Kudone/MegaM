@@ -5,9 +5,12 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
+    public Transform enemyTrans;
+
     // Start is called before the first frame update
     void Start()
     {
+        enemyTrans = GameObject.Find("EnemyCharacter").transform;
         StartCoroutine("Action");
     }
 
@@ -27,7 +30,7 @@ public class EnemyController : MonoBehaviour
             int vr = UnityEngine.Random.Range(0, 3);
             int hr = UnityEngine.Random.Range(0, 3);
 
-            Transform enemyTrans = GameObject.Find("EnemyCharacter").transform;
+            //Transform enemyTrans = GameObject.Find("EnemyCharacter").transform;
             Vector3 pos = enemyTrans.position;
             
 
